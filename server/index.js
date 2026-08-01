@@ -88,13 +88,11 @@ app.get("/", (req, res) => {
 connectDb()
 .then(() => {
 
-  app.listen(PORT, () => {
+  const PORT = process.env.PORT || 8000;
 
-    console.log(
-      `✅ Server running on port ${PORT}`
-    );
-
-  });
+app.listen(PORT,()=>{
+ console.log(`Server running on port ${PORT}`);
+});
 
 })
 .catch((error) => {
