@@ -18,88 +18,58 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 
-// ===============================
 // CORS
-// ===============================
-
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    credentials: true,
+    origin:[
+      "http://localhost:5173",
+      "https://your-vercel-url.vercel.app"
+    ],
+    credentials:true
   })
 );
 
 
-// ===============================
-// STRIPE WEBHOOK
-// KEEP BEFORE express.json()
-// ===============================
-
+// Stripe webhook
 app.use(
   "/api/payment/webhook",
   webhookRoutes
 );
 
 
-// ===============================
-// BODY PARSER
-// ===============================
-
+// Body parser
 app.use(express.json());
-
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
-
+app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 
-// ===============================
-// ROUTES
-// ===============================
-
+// Routes
 app.use("/api/auth", authRoutes);
-
 app.use("/api/interview", interviewRoutes);
-
 app.use("/api/payment", paymentRoutes);
-
 app.use("/api/user", userRoutes);
 
 
-// ===============================
-// TEST
-// ===============================
-
-app.get("/", (req, res) => {
-  res.json({
-    success: true,
-    message: "HireMind API Running 🚀",
-  });
+// Test
+app.get("/",(req,res)=>{
+ res.json({
+  success:true,
+  message:"HireMind API Running 🚀"
+ });
 });
 
-
-// ===============================
-// DATABASE + SERVER
-// ===============================
 
 connectDb()
-.then(() => {
+.then(()=>{
 
-  const PORT = process.env.PORT || 8000;
-
-app.listen(PORT,()=>{
- console.log(`Server running on port ${PORT}`);
-});
+ app.listen(PORT,()=>{
+  console.log(`Server running on port ${PORT}`);
+ });
 
 })
-.catch((error) => {
-
-  console.log(
-    "❌ Database connection failed:",
-    error.message
-  );
-
+.catch((error)=>{
+ console.log(
+  "❌ Database connection failed:",
+  error.message
+ );
 });
