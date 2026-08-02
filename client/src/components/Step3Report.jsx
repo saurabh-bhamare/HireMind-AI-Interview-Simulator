@@ -26,7 +26,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://hiremind-server-syni.onrender.com";
 
 /* ---------------------------------------------------------
    DESIGN TOKENS

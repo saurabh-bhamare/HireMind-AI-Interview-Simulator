@@ -23,7 +23,7 @@ import Dashboard from "./pages/Dashboard";
 import EditProfile from "./pages/EditProfile";
 
 
-const ServerUrl = 'https://hiremind-server-syni.onrender.com';
+const ServerUrl =import.meta.env.VITE_SERVER_URL;
 
 
 function App() {
