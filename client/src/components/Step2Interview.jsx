@@ -236,7 +236,7 @@ const detectEyes = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        `http://localhost:8000/api/interview/answer/${interviewData._id}`,
+        `https://hiremind-server-syni.onrender.com/api/interview/answer/${interviewData._id}`,
         {
           questionIndex: currentQuestion,
           answer: answer || "No Answer",

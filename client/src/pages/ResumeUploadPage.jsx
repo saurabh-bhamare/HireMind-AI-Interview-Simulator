@@ -10,7 +10,7 @@ import {
   FiAlertTriangle,
 } from "react-icons/fi";
 
-const SERVER_URL = "http://localhost:8000";
+const SERVER_URL = "https://hiremind-server-syni.onrender.com";
 
 /* ------------------------------------------------------------------ */
 /* Same control-room tokens as the rest of the app                    */

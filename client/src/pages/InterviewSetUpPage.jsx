@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { AlertTriangle, UploadCloud, X } from "lucide-react";
 import Step1SetUp from "../components/Step1SetUp";
 
-const SERVER_URL = "http://localhost:8000";
+const SERVER_URL = "https://hiremind-server-syni.onrender.com";
 
 /* ------------------------------------------------------------------ */
 /* Same control-room tokens as the rest of the app                    */

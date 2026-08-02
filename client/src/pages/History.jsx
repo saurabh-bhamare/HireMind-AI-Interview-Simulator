@@ -41,7 +41,7 @@ function History() {
 
       const res = await axios.get(
 
-        "http://localhost:8000/api/interview/history",
+        "https://hiremind-server-syni.onrender.com/api/interview/history",
 
         {
 

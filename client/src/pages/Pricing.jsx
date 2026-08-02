@@ -18,7 +18,7 @@ const buyCredits = async (credits, price) => {
     }
 
     const response = await axios.post(
-      "http://localhost:8000/api/payment/create-checkout-session",
+      "https://hiremind-server-syni.onrender.com/api/payment/create-checkout-session",
       {
         credits,
         price,

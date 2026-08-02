@@ -17,7 +17,7 @@ import { setUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 
 // BACKEND URL
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://hiremind-server-syni.onrender.com";
 
 function Auth() {
 

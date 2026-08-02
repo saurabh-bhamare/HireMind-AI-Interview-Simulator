@@ -59,7 +59,7 @@ const token=localStorage.getItem("token");
 
 const {data}=await axios.put(
 
-"http://localhost:8000/api/user/profile",
+"https://hiremind-server-syni.onrender.com/api/user/profile",
 
 form,
 
