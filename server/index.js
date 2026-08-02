@@ -23,7 +23,7 @@ app.use(
   cors({
     origin:[
       "http://localhost:5173",
-      "hire-mind-ai-interview-simulator-g5khtfgmb-saurabh-1ebc.vercel.app"
+      "hire-mind-ai-interview-simulator-ufht-9k24lgxvd-saurabh-1ebc.vercel.app"
     ],
     credentials:true
   })
