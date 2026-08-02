@@ -12,7 +12,7 @@ import {
   analyzeInterview,
   generateInterviewReport
 
-} from "../controllers/interview.js";
+} from "../controllers/Interview.js";
 
 
 import isAuth from "../middlewares/isauth.js";
