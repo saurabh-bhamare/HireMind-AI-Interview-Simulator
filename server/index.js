@@ -1,6 +1,7 @@
 import "dotenv/config";
 
 import express from "express";
+
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
@@ -14,21 +15,43 @@ import userRoutes from "./routes/user.js";
 
 
 const app = express();
-
 const PORT = process.env.PORT || 8000;
 
-
 // CORS
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://hire-mind-ai-interview-simulator-4y6136ypx-saurabh-1ebc.vercel.app"
+];
+
+
 app.use(
   cors({
-    origin:[
-      "http://localhost:5173",
-      "hire-mind-ai-interview-simulator-ufht-9k24lgxvd-saurabh-1ebc.vercel.app"
+    origin: function(origin, callback){
+
+      if(!origin){
+        return callback(null,true);
+      }
+
+      if(allowedOrigins.includes(origin)){
+        return callback(null,true);
+      }
+
+      return callback(new Error("CORS blocked"));
+    },
+    credentials:true,
+    methods:[
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE",
+      "OPTIONS"
     ],
-    credentials:true
+    allowedHeaders:[
+      "Content-Type",
+      "Authorization"
+    ]
   })
 );
-
 
 // Stripe webhook
 app.use(
